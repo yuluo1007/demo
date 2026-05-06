@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgentScope — Where Agents Come Alive</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+    <!-- ===== Top Nav ===== -->
+    <nav class="nav" id="nav">
+        <a class="nav-brand" href="./">
+            <img src="logo.png" alt="AgentScope" />
+            <span>AgentScope</span>
+        </a>
+
+        <!---
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </button>
+        -->
+
+        <div class="nav-links" id="nav-links">
+            <a href="blog/">Blogs</a>
+            <a href="community.html">Community</a>
+        </div>
+        <div class="nav-socials">
+            <a class="nav-icon" href="https://github.com/agentscope-ai" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+            </a>
+            <a class="nav-icon" href="https://x.com/agentscope_ai" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a class="nav-icon" href="https://discord.com/invite/eYMpfnkG8h" target="_blank" rel="noopener" aria-label="Discord">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            </a>
+            <a class="nav-icon" href="https://www.xiaohongshu.com/user/profile/691c18db0000000037032be9" target="_blank" rel="noopener" aria-label="RedNote (Xiaohongshu)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.405 9.879c.002.016.01.02.07.019h.725a.797.797 0 0 0 .78-.972.794.794 0 0 0-.884-.618.795.795 0 0 0-.692.794c0 .101-.002.666.001.777zm-11.509 4.808c-.203.001-1.353.004-1.685.003a2.528 2.528 0 0 1-.766-.126.025.025 0 0 0-.03.014L7.7 16.127a.025.025 0 0 0 .01.032c.111.06.336.124.495.124.66.01 1.32.002 1.981 0 .01 0 .02-.006.023-.015l.712-1.545a.025.025 0 0 0-.024-.036zM.477 9.91c-.071 0-.076.002-.076.01a.834.834 0 0 0-.01.08c-.027.397-.038.495-.234 3.06-.012.24-.034.389-.135.607-.026.057-.033.042.003.112.046.092.681 1.523.787 1.74.008.015.011.02.017.02.008 0 .033-.026.047-.044.147-.187.268-.391.371-.606.306-.635.44-1.325.486-1.706.014-.11.021-.22.03-.33l.204-2.616.022-.293c.003-.029 0-.033-.03-.034zm7.203 3.757a1.427 1.427 0 0 1-.135-.607c-.004-.084-.031-.39-.235-3.06a.443.443 0 0 0-.01-.082c-.004-.011-.052-.008-.076-.008h-1.48c-.03.001-.034.005-.03.034l.021.293c.076.982.153 1.964.233 2.946.05.4.186 1.085.487 1.706.103.215.223.419.37.606.015.018.037.051.048.049.02-.003.742-1.642.804-1.765.036-.07.03-.055.003-.112zm3.861-.913h-.872a.126.126 0 0 1-.116-.178l1.178-2.625a.025.025 0 0 0-.023-.035l-1.318-.003a.148.148 0 0 1-.135-.21l.876-1.954a.025.025 0 0 0-.023-.035h-1.56c-.01 0-.02.006-.024.015l-.926 2.068c-.085.169-.314.634-.399.938a.534.534 0 0 0-.02.191.46.46 0 0 0 .23.378.981.981 0 0 0 .46.119h.59c.041 0-.688 1.482-.834 1.972a.53.53 0 0 0-.023.172.465.465 0 0 0 .23.398c.15.092.342.12.475.12l1.66-.001c.01 0 .02-.006.023-.015l.575-1.28a.025.025 0 0 0-.024-.035zm-6.93-4.937H3.1a.032.032 0 0 0-.034.033c0 1.048-.01 2.795-.01 6.829 0 .288-.269.262-.28.262h-.74c-.04.001-.044.004-.04.047.001.037.465 1.064.555 1.263.01.02.03.033.051.033.157.003.767.009.938-.014.153-.02.3-.06.438-.132.3-.156.49-.419.595-.765.052-.172.075-.353.075-.533.002-2.33 0-4.66-.007-6.991a.032.032 0 0 0-.032-.032zm11.784 6.896c0-.014-.01-.021-.024-.022h-1.465c-.048-.001-.049-.002-.05-.049v-4.66c0-.072-.005-.07.07-.07h.863c.08 0 .075.004.075-.074V8.393c0-.082.006-.076-.08-.076h-3.5c-.064 0-.075-.006-.075.073v1.445c0 .083-.006.077.08.077h.854c.075 0 .07-.004.07.07v4.624c0 .095.008.084-.085.084-.37 0-1.11-.002-1.304 0-.048.001-.06.03-.06.03l-.697 1.519s-.014.025-.008.036c.006.01.013.008.058.008 1.748.003 3.495.002 5.243.002.03-.001.034-.006.035-.033v-1.539zm4.177-3.43c0 .013-.007.023-.02.024-.346.006-.692.004-1.037.004-.014-.002-.022-.01-.022-.024-.005-.434-.007-.869-.01-1.303 0-.072-.006-.071.07-.07l.733-.003c.041 0 .081.002.12.015.093.025.16.107.165.204.006.431.002 1.153.001 1.153zm2.67.244a1.953 1.953 0 0 0-.883-.222h-.18c-.04-.001-.04-.003-.042-.04V10.21c0-.132-.007-.263-.025-.394a1.823 1.823 0 0 0-.153-.53 1.533 1.533 0 0 0-.677-.71 2.167 2.167 0 0 0-1-.258c-.153-.003-.567 0-.72 0-.07 0-.068.004-.068-.065V7.76c0-.031-.01-.041-.046-.039H17.93s-.016 0-.023.007c-.006.006-.008.012-.008.023v.546c-.008.036-.057.015-.082.022h-.95c-.022.002-.028.008-.03.032v1.481c0 .09-.004.082.082.082h.913c.082 0 .072.128.072.128V11.19s.003.117-.06.117h-1.482c-.068 0-.06.082-.06.082v1.445s-.01.068.064.068h1.457c.082 0 .076-.006.076.079v3.225c0 .088-.007.081.082.081h1.43c.09 0 .082.007.082-.08v-3.27c0-.029.006-.035.033-.035l2.323-.003c.098 0 .191.02.28.061a.46.46 0 0 1 .274.407c.008.395.003.79.003 1.185 0 .259-.107.367-.33.367h-1.218c-.023.002-.029.008-.028.033.184.437.374.871.57 1.303a.045.045 0 0 0 .04.026c.17.005.34.002.51.003.15-.002.517.004.666-.01a2.03 2.03 0 0 0 .408-.075c.59-.18.975-.698.976-1.313v-1.981c0-.128-.01-.254-.034-.38 0 .078-.029-.641-.724-.998z"/></svg>
+            </a>
+            <a class="nav-icon" href="https://www.dingtalk.com/download?action=joingroup&amp;code=v1,k1,1k7GcVwa5PzZWRaWyBA5OFImW0zNNx1Gj9RkjnuKVGY=" target="_blank" rel="noopener" aria-label="DingTalk">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2m4.49 9.04l-.006.014c-.42.898-1.516 2.66-1.516 2.66l-.005-.012-.32.558h1.543l-2.948 3.919.67-2.666h-1.215l.422-1.763c-.41.087-.815.205-1.223.349 0 0-.646.378-1.862-.729 0 0-.82-.722-.344-.902.202-.077.981-.175 1.595-.257.652-.087 1.338-.172 1.338-.172s-2.555.039-3.161-.057c-.606-.095-1.375-1.107-1.539-1.996 0 0-.253-.488.545-.257s4.101.9 4.101.9S8.27 9.312 7.983 8.99c-.286-.32-.841-1.754-.769-2.634 0 0 .031-.22.257-.16 0 0 3.176 1.45 5.347 2.245s4.06 1.199 3.816 2.228c-.02.087-.072.216-.144.37"/></svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ===== Video Carousel Background ===== -->
+    <div class="video-wall">
+        <video id="bgvid1" muted playsinline preload="auto"></video>
+        <video id="bgvid2" muted playsinline preload="auto"></video>
+    </div>
+
+    <!-- ===== Hero ===== -->
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <img class="hero-logo" src="logo.png" alt="AgentScope" />
+            <h1>AgentScope</h1>
+            <p class="tagline">Where Agents Come Alive</p>
+            <p class="subtitle">
+                The open-source stack for developing, evaluating, hosting, and evolving agents —
+                with applications built on top, from personal assistants to autonomous workers.
+            </p>
+        </div>
+        <div class="scroll-hint" id="scroll-hint">PRESS ANY BUTTON TO EXPLORE ↓</div>
+    </div>
+
+    <!-- ===== Sidebar (fixed, floats over entire page) ===== -->
+    <aside class="content-sidebar" id="content-sidebar">
+        <nav class="group-nav" aria-label="Jump to group">
+
+            <div class="group-nav-btn" data-target="group-frameworks" role="button" tabindex="0">
+                <span class="group-nav-name">Agent Frameworks & Runtimes</span>
+                <span class="group-nav-desc">Core & multi-lang runtimes</span>
+                <div class="group-nav-menu" role="menu">
+                    <div class="nav-projects-grid">
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/agentscope" target="_blank" rel="noopener">
+                            <span class="name">agentscope</span>
+                            <span class="desc">Core open-source framework for building agents you can see, understand, and trust.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/agentscope-java" target="_blank" rel="noopener">
+                            <span class="name">agentscope-java</span>
+                            <span class="desc">Agent-oriented programming for the JVM.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/agentscope-typescript" target="_blank" rel="noopener">
+                            <span class="name">agentscope-typescript</span>
+                            <span class="desc">TypeScript agent framework — born for agent systems.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/agentscope-runtime" target="_blank" rel="noopener">
+                            <span class="name">agentscope-runtime</span>
+                            <span class="desc">Production runtime with sandboxed tools, Agent-as-a-Service APIs, and observability.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/agentscope-runtime-java" target="_blank" rel="noopener">
+                            <span class="name">agentscope-runtime-java</span>
+                            <span class="desc">Runtime framework for agent deployment and tool sandboxing on the JVM.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/HiClaw" target="_blank" rel="noopener">
+                            <span class="name">HiClaw</span>
+                            <span class="desc">Collaborative multi-agent OS for human-in-the-loop coordination via Matrix.</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-nav-connector" aria-hidden="true"></div>
+
+            <div class="group-nav-btn" data-target="group-intelligence" role="button" tabindex="0">
+                <span class="group-nav-name">Intelligence & Evolving</span>
+                <span class="group-nav-desc">Memory, eval & training</span>
+                <div class="group-nav-menu" role="menu">
+                    <div class="nav-projects-grid">
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/ReMe" target="_blank" rel="noopener">
+                            <span class="name">ReMe</span>
+                            <span class="desc">Memory management kit for agents — Remember Me, Refine Me.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/OpenJudge" target="_blank" rel="noopener">
+                            <span class="name">OpenJudge</span>
+                            <span class="desc">Unified framework for holistic evaluation and quality rewards.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/skills" target="_blank" rel="noopener">
+                            <span class="name">skills</span>
+                            <span class="desc">Curated skills around the AgentScope ecosystem and CoPaw applications.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/Trinity-RFT" target="_blank" rel="noopener">
+                            <span class="name">Trinity-RFT</span>
+                            <span class="desc">Flexible, scalable framework for reinforcement fine-tuning of LLMs.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/TuFT" target="_blank" rel="noopener">
+                            <span class="name">TuFT</span>
+                            <span class="desc">Multi-tenant fine-tuning for local LLMs with a Tinker-compatible API.</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-nav-connector" aria-hidden="true"></div>
+
+            <div class="group-nav-btn" data-target="group-playgrounds" role="button" tabindex="0">
+                <span class="group-nav-name">Agents & Their Playgrounds</span>
+                <span class="group-nav-desc">Real-world agent apps</span>
+                <div class="group-nav-menu" role="menu">
+                    <div class="nav-projects-grid">
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/QwenPaw" target="_blank" rel="noopener">
+                            <span class="name">QwenPaw</span>
+                            <span class="desc">Personal AI assistant — easy to install on your machine or the cloud.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://mingle.top/" target="_blank" rel="noopener">
+                            <span class="name">PawFriends</span>
+                            <span class="desc">Social media for AI agents — give your agent a personality and watch it make friends.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/DojoZero" target="_blank" rel="noopener">
+                            <span class="name">DojoZero</span>
+                            <span class="desc">Agents that run on realtime data and predict future game outcomes.</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-nav-connector" aria-hidden="true"></div>
+
+            <div class="group-nav-btn" data-target="group-devtools" role="button" tabindex="0">
+                <span class="group-nav-name">Developer Experience</span>
+                <span class="group-nav-desc">UI, design & tooling</span>
+                <div class="group-nav-menu" role="menu">
+                    <div class="nav-projects-grid">
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/agentscope-studio" target="_blank" rel="noopener">
+                            <span class="name">agentscope-studio</span>
+                            <span class="desc">Development-oriented visualization toolkit for agent runs.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/agentscope-spark-design" target="_blank" rel="noopener">
+                            <span class="name">agentscope-spark-design</span>
+                            <span class="desc">UI component library for Alibaba Cloud Apsara Lab.</span>
+                        </a>
+                        <a class="nav-project-item" role="menuitem" href="https://github.com/agentscope-ai/agentscope-samples" target="_blank" rel="noopener">
+                            <span class="name">agentscope-samples</span>
+                            <span class="desc">Ready-to-use Python sample agents — from CLI tools to full-stack apps.</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    </aside>
+
+    <!-- ===== Content ===== -->
+    <div class="content">
+
+        <div class="main-frame">
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>An Open Stack for AI Agents</h2>
+            <p class="lead">
+                AgentScope spans the full agent lifecycle — from the core framework, to runtime hosting, to memory and
+                evaluation, to fine-tuning, to ready-to-use applications.
+                Following are some highlighted open-source projects that are built to work together.
+            </p>
+
+            <div class="projects-grid">
+
+                <!-- ── Group 1: Core Frameworks & Runtimes ── -->
+                <div class="projects-group-header" id="group-frameworks">
+                    <span class="projects-group-label">Agent Frameworks and Runtimes</span>
+                    <p class="projects-group-desc">Multi-language frameworks and production runtimes — the shared foundation every AgentScope project is built on.</p>
+                </div>
+
+                <!-- AgentScope (core) -->
+                <div class="project-card">
+                    <a class="project-image" href="https://docs.agentscope.io" target="_blank" rel="noopener" aria-label="AgentScope docs">
+                        <img src="https://raw.githubusercontent.com/agentscope-ai/agentscope/main/assets/images/agentscope.png" alt="AgentScope ecosystem diagram" loading="lazy" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>AgentScope</h3>
+                            <span class="project-tag">Core Framework</span>
+                        </div>
+                        <p>
+                            The core open-source framework for building transparent, manageable AI agents —
+                            with built-in ReAct, tools, memory, planning, realtime voice, evaluation,
+                            and production-ready deployment from local to Kubernetes.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/agentscope-ai/agentscope" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+                                <span class="label">github.com/agentscope-ai/agentscope</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="https://docs.agentscope.io" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                                <span class="label">docs.agentscope.io</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AgentScope-Java -->
+                <div class="project-card">
+                    <a class="project-image" href="https://java.agentscope.io/" target="_blank" rel="noopener" aria-label="AgentScope Java site">
+                        <img src="https://opengraph.githubassets.com/1/agentscope-ai/agentscope-java" alt="AgentScope-Java repository preview" loading="lazy" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>AgentScope-Java</h3>
+                            <span class="project-tag">Core Framework</span>
+                        </div>
+                        <p>
+                            An agent-oriented programming framework for the JVM — bringing reasoning,
+                            tool integration, memory management, and multi-agent collaboration to
+                            Java enterprise applications.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/agentscope-ai/agentscope-java" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+                                <span class="label">github.com/agentscope-ai/agentscope-java</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="https://java.agentscope.io/" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                                <span class="label">java.agentscope.io</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HiClaw -->
+                <div class="project-card">
+                    <a class="project-image" href="https://hiclaw.io" target="_blank" rel="noopener" aria-label="HiClaw website">
+                        <img src="images/hiclaw-screenshot.jpg" alt="HiClaw — multi-agent OS website" loading="lazy" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>HiClaw</h3>
+                            <span class="project-tag">Multi-Agent OS</span>
+                        </div>
+                        <p>
+                            An open-source collaborative multi-agent OS for transparent,
+                            human-in-the-loop task coordination via Matrix rooms — keeping
+                            humans and agents in the same conversation.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/agentscope-ai/HiClaw" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+                                <span class="label">github.com/agentscope-ai/HiClaw</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="https://hiclaw.io" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                <span class="label">hiclaw.io</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Group 2: Intelligent Components & Training ── -->
+                <div class="projects-group-header" id="group-intelligence">
+                    <span class="projects-group-label">Intelligence and Evolving</span>
+                    <p class="projects-group-desc">Memory that persists, skills that compose, evaluators that judge, and training that improves — the layer that makes agents continuously smarter.</p>
+                </div>
+
+                <!-- ReMe -->
+                <div class="project-card">
+                    <a class="project-image logo" href="https://github.com/agentscope-ai/ReMe" target="_blank" rel="noopener" aria-label="ReMe GitHub">
+                        <img src="https://raw.githubusercontent.com/agentscope-ai/ReMe/main/docs/_static/figure/reme_logo.png" alt="ReMe logo" loading="lazy" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>ReMe</h3>
+                            <span class="project-tag">Memory</span>
+                        </div>
+                        <p>
+                            A memory management toolkit that gives agents persistent, retrievable memory —
+                            file-based and vector-based — so they remember preferences, learn from past
+                            interactions, and stay context-aware across sessions and long conversations.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/agentscope-ai/ReMe" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+                                <span class="label">github.com/agentscope-ai/ReMe</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="https://deepwiki.com/agentscope-ai/ReMe" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                                <span class="label">deepwiki.com/agentscope-ai/ReMe</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OpenJudge -->
+                <div class="project-card">
+                    <a class="project-image logo" href="https://openjudge.me/" target="_blank" rel="noopener" aria-label="OpenJudge website">
+                        <img src="https://raw.githubusercontent.com/agentscope-ai/OpenJudge/main/docs/images/logo.svg" alt="OpenJudge logo" loading="lazy" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>OpenJudge</h3>
+                            <span class="project-tag">Evaluation</span>
+                        </div>
+                        <p>
+                            A unified framework for holistic evaluation and quality rewards, with 50+
+                            production-grade judges that systematically measure agent lifecycle, tool use,
+                            code, math and multimodal output — and turn judgments into training rewards.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/agentscope-ai/OpenJudge" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+                                <span class="label">github.com/agentscope-ai/OpenJudge</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="https://openjudge.me/" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                <span class="label">openjudge.me</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trinity-RFT -->
+                <div class="project-card">
+                    <a class="project-image" href="https://agentscope-ai.github.io/Trinity-RFT/en/main/index.html" target="_blank" rel="noopener" aria-label="Trinity-RFT documentation">
+                        <img src="https://img.alicdn.com/imgextra/i1/O1CN01Ti0o4320RywoAuyhN_!!6000000006847-2-tps-3840-2134.png" alt="Trinity-RFT system architecture" loading="lazy" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>Trinity-RFT</h3>
+                            <span class="project-tag">Evolving and Training</span>
+                        </div>
+                        <p>
+                            A general-purpose, flexible framework for reinforcement fine-tuning of LLMs.
+                            Cleanly decouples the loop into Explorer, Trainer, and Buffer — making
+                            complex RFT pipelines easy to coordinate and customize.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/agentscope-ai/Trinity-RFT" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+                                <span class="label">github.com/agentscope-ai/Trinity-RFT</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="https://agentscope-ai.github.io/Trinity-RFT/en/main/index.html" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                                <span class="label">agentscope-ai.github.io/Trinity-RFT</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TuFT -->
+                <div class="project-card">
+                    <a class="project-image" href="https://agentscope-ai.github.io/TuFT/en/latest/index.html" target="_blank" rel="noopener" aria-label="TuFT documentation">
+                        <img src="https://img.alicdn.com/imgextra/i3/O1CN01M7FlDa1LkOf90UsHk_!!6000000001337-2-tps-4000-2250.png" alt="TuFT system overview" loading="lazy" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>TuFT</h3>
+                            <span class="project-tag">Training and Infra</span>
+                        </div>
+                        <p>
+                            Multi-tenant fine-tuning for local LLMs with a Tinker-compatible API —
+                            letting many users share one infrastructure to fine-tune models efficiently
+                            through a single unified interface.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/agentscope-ai/TuFT" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+                                <span class="label">github.com/agentscope-ai/TuFT</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="https://agentscope-ai.github.io/TuFT/en/latest/index.html" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                                <span class="label">agentscope-ai.github.io/TuFT</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Group 3: Applications ── -->
+                <div class="projects-group-header" id="group-playgrounds">
+                    <span class="projects-group-label">Agents and their Playgrounds</span>
+                    <p class="projects-group-desc">Agents doing real things in real environments — a personal assistant you run yourself, a prediction arena wired to live games, a social network where agents make friends.</p>
+                </div>
+
+                <!-- QwenPaw -->
+                <div class="project-card">
+                    <a class="project-image" href="https://qwenpaw.agentscope.io" target="_blank" rel="noopener" aria-label="QwenPaw website">
+                        <img src="https://img.alicdn.com/imgextra/i1/O1CN01BLYCfm1Qyf5WcMDDf_!!6000000002045-2-tps-1924-1202.png" alt="QwenPaw preview" loading="lazy" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>QwenPaw</h3>
+                            <span class="project-tag">Agent</span>
+                        </div>
+                        <p>
+                            Your personal AI assistant — easy to install on your machine or the cloud,
+                            with multi-agent collaboration, memory that evolves, and integrations across
+                            DingTalk, Feishu, WeChat, Discord, Telegram and more.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/agentscope-ai/QwenPaw" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+                                <span class="label">github.com/agentscope-ai/QwenPaw</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="https://qwenpaw.agentscope.io" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                <span class="label">qwenpaw.agentscope.io</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DojoZero -->
+                <div class="project-card">
+                    <a class="project-image" href="https://dojozero.live" target="_blank" rel="noopener" aria-label="DojoZero website">
+                        <img src="images/dojozero.jpg" alt="DojoZero arena — agents predicting an NBA game in realtime" loading="lazy" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>DojoZero</h3>
+                            <span class="project-tag">Playground</span>
+                        </div>
+                        <p>
+                            A platform for AI agents that run continuously on realtime data — reasoning
+                            about future outcomes and acting on them, like making predictions on live
+                            sports events.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/agentscope-ai/DojoZero" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+                                <span class="label">github.com/agentscope-ai/DojoZero</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="https://dojozero.live" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                <span class="label">dojozero.live</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PawFriends -->
+                <div class="project-card">
+                    <a class="project-image" href="https://mingle.top/" target="_blank" rel="noopener" aria-label="PawFriends — mingle.top">
+                        <img src="images/pawfriend.jpg" alt="PawFriends — social media for AI agents" loading="lazy" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>PawFriends</h3>
+                            <span class="project-tag">Social</span>
+                        </div>
+                        <p>
+                            Social media for AI agents — create your agent, watch it make friends.
+                            Give your AI agent a personality and set it free; it posts, comments, debates,
+                            and builds relationships with other AIs on its own. No coding.
+                        </p>
+                        <div class="project-links">
+                            <span class="upcoming">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+                                <span class="label">GitHub</span>
+                                <span class="pill">Upcoming</span>
+                            </span>
+                            <a href="https://mingle.top/" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                <span class="label">mingle.top</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Group 4: Developer Experience ── -->
+                <div class="projects-group-header" id="group-devtools">
+                    <span class="projects-group-label">Developer Experience</span>
+                    <p class="projects-group-desc">Visualization, design systems, and sample agents — the tooling that makes building with AgentScope faster and more enjoyable.</p>
+                </div>
+
+                <!-- AgentScope Spark Design -->
+                <div class="project-card">
+                    <a class="project-image" href="https://sparkdesign.agentscope.io/" target="_blank" rel="noopener" aria-label="Spark Design website">
+                        <img src="images/spark-design-og.jpg" alt="AgentScope Spark Design — UI component library" loading="lazy" />
+                    </a>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>AgentScope Spark Design</h3>
+                            <span class="project-tag">UI Design</span>
+                        </div>
+                        <p>
+                            A modern design system and React component library built for LLM
+                            products — design tokens, no-code templates, and responsive primitives
+                            powering Alibaba Cloud Apsara Lab.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/agentscope-ai/agentscope-spark-design" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.18c0 .31.21.68.8.56C20.71 21.4 24 17.09 24 12.02 24 5.74 18.77.5 12.5.5h-.5Z"/></svg>
+                                <span class="label">github.com/agentscope-ai/agentscope-spark-design</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="https://sparkdesign.agentscope.io/" target="_blank" rel="noopener">
+                                <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                <span class="label">sparkdesign.agentscope.io</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Trusted By -->
+        <section class="trusted-section">
+            <h2>Trusted by Teams At</h2>
+            <div class="trusted-marquee">
+                <div class="trusted-track" aria-hidden="false">
+                    <img src="https://img.alicdn.com/imgextra/i2/O1CN01zNqhlW1LQhdQtnDVL_!!6000000001294-2-tps-444-252.png" alt="Alibaba Cloud" />
+                    <img src="https://img.alicdn.com/imgextra/i3/O1CN01yuI5TC1U5wDiOpOOx_!!6000000002467-2-tps-444-252.png" alt="Alibaba Group" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN01ZrCRp71HburxJ6W7x_!!6000000000777-2-tps-444-252.png" alt="Ant Group" />
+                    <img src="https://img.alicdn.com/imgextra/i4/O1CN01jH8cTr1JwBd5zrxPU_!!6000000001092-2-tps-444-252.png" alt="CBC Bank" />
+                    <img src="https://img.alicdn.com/imgextra/i2/O1CN01dIHs6k1T3olrQIJ2o_!!6000000002327-2-tps-444-252.png" alt="Fliggy" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN01Z13CGo1JeKBPbaQtd_!!6000000001053-2-tps-444-252.png" alt="Fun" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN01HJyC8g1bj3M8ea6Ar_!!6000000003500-2-tps-444-252.png" alt="Super Computing" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN01h7L97m1aCFMwlgPvI_!!6000000003293-2-tps-444-252.png" alt="Taobao Shangu" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN01g8piz81pIrKD6BsPr_!!6000000005338-2-tps-444-252.png" alt="Times Bright" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN019ID4Bp1eqmtM9rdIq_!!6000000003923-2-tps-444-252.png" alt="Uupaotui" />
+                </div>
+                <div class="trusted-track" aria-hidden="true">
+                    <img src="https://img.alicdn.com/imgextra/i2/O1CN01zNqhlW1LQhdQtnDVL_!!6000000001294-2-tps-444-252.png" alt="" />
+                    <img src="https://img.alicdn.com/imgextra/i3/O1CN01yuI5TC1U5wDiOpOOx_!!6000000002467-2-tps-444-252.png" alt="" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN01ZrCRp71HburxJ6W7x_!!6000000000777-2-tps-444-252.png" alt="" />
+                    <img src="https://img.alicdn.com/imgextra/i4/O1CN01jH8cTr1JwBd5zrxPU_!!6000000001092-2-tps-444-252.png" alt="" />
+                    <img src="https://img.alicdn.com/imgextra/i2/O1CN01dIHs6k1T3olrQIJ2o_!!6000000002327-2-tps-444-252.png" alt="" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN01Z13CGo1JeKBPbaQtd_!!6000000001053-2-tps-444-252.png" alt="" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN01HJyC8g1bj3M8ea6Ar_!!6000000003500-2-tps-444-252.png" alt="" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN01h7L97m1aCFMwlgPvI_!!6000000003293-2-tps-444-252.png" alt="" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN01g8piz81pIrKD6BsPr_!!6000000005338-2-tps-444-252.png" alt="" />
+                    <img src="https://img.alicdn.com/imgextra/i1/O1CN019ID4Bp1eqmtM9rdIq_!!6000000003923-2-tps-444-252.png" alt="" />
+                </div>
+            </div>
+        </section>
+
+        </div><!-- /.main-frame -->
+
+        <!-- Footer
+        <footer>
+            <p>
+                <a href="https://agentscope.io">agentscope.io</a>
+                &nbsp;·&nbsp;
+                <a href="https://github.com/agentscope-ai" target="_blank" rel="noopener">GitHub</a>
+                &nbsp;·&nbsp;
+                <a href="https://docs.agentscope.io" target="_blank" rel="noopener">Docs</a>
+                &nbsp;·&nbsp;
+                <a href="blog/">Blogs</a>
+                &nbsp;·&nbsp;
+                Built with care by the AgentScope team
+            </p>
+        </footer>
+        -->
+
+    </div>
+
+    <!-- Nav scroll effect + mobile toggle -->
+    <!--
+    <script src="assets/js/nav-include.js"></script>
+    -->
+    <script src="assets/js/nav.js"></script>
+
+    <!-- Video cycling logic -->
+    <script src="assets/js/video.js"></script>
+
+    <!-- Content sidebar scroll tracking -->
+    <script src="assets/js/content-nav.js"></script>
+</body>
+</html>
