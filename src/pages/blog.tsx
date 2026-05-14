@@ -13,7 +13,7 @@ const blogPosts = [
     readTime: '8 min read',
     category: 'Announcement',
     color: '#1677FF',
-    author: { name: 'AgentScope Team', avatar: 'AS' },
+    author: { name: 'AgentScope Team', avatar: 'ASO' },
   },
   {
     slug: 'building-research-agents',
